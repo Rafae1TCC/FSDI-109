@@ -1,0 +1,12 @@
+.home h1{
+    font-size: 50px;
+}
+
+.btn{
+    padding: 20px;
+    margin: 20px;
+    background-color: #35BD86;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+}

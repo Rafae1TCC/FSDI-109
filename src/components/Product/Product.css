@@ -1,0 +1,46 @@
+.card {
+  background-color: rgba(189, 187, 187, 0.87);
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 8px 20px rgba(56, 56, 56, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  margin: 10px;
+  width: 250px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success {
+  align-items: unset;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  background-color: green;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-success:hover {
+  color: rgba(255, 255, 255, 0.87);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.controls{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.prices{
+  justify-content: space-evenly;
+}
+
+.prices .total {
+
+}

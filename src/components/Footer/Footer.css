@@ -1,0 +1,30 @@
+.footer {
+  border-top: 1px solid #635f5f;
+  text-align: center;
+}
+
+.ftrmenu {
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footerbtn {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.87);
+  letter-spacing: 1px;
+  font-weight: bolder;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #635f5f;
+}
+
+.footerbtn:hover {
+  color: rgba(255, 255, 255, 0.87);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}

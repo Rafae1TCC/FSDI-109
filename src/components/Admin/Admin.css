@@ -1,0 +1,12 @@
+.admin h1{
+    
+}
+
+.admin img{
+    width: 350px;
+}
+
+.admin .parent{
+    display: flex;
+    justify-content: space-evenly;
+}

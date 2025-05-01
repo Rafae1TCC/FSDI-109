@@ -1,0 +1,34 @@
+nav{
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  background-color: #888686;
+}
+
+nav .menu{
+  flex: 1;
+  display: flex;
+}
+
+nav .navbtn {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.87);
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  width: 90px;
+  padding: 12px 0;
+}
+
+nav .navbtn:hover {
+  color: rgba(255, 255, 255, 0.87);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+nav .title{
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 12px;
+}

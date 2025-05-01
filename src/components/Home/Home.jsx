@@ -1,0 +1,20 @@
+import "./Home.css";
+import { Link } from "react-router-dom";
+
+function Home(){
+
+    return (
+        <div className="home">
+            <div>
+            <h1>Balatro Shop Home Page</h1>
+            <img src="/images/Site-logo.webp" alt="" />
+            </div>
+            <Link className="btn pixel-corners" to="../catalog">
+            Catalog
+          </Link>
+        </div>
+    );
+
+}
+
+export default Home;

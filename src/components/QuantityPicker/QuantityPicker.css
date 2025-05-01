@@ -1,0 +1,29 @@
+.picker {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.picker button {
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.87);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.picker button:hover {
+  color: rgba(255, 255, 255, 0.87);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.picker button:disabled {
+  transform: none;
+  box-shadow: none;
+}
