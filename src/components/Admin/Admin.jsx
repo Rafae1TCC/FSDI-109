@@ -5,10 +5,13 @@ import AdminProduct from "./AdminProduct";
 function Admin(){
 
     return (
-        <div className="admin">
-            <h1>Balatro Administration</h1>
-            <img src="/images/LocalThunkLogo.webp" alt="" />
-
+        <div className="admin main-container">
+            <div className="gray-container title-card">
+                <h3>Balatro Administration</h3>
+                <div className="admin inner-container">
+                    <img src="/images/LocalThunkLogo.webp" alt="" />
+                </div>
+            </div>
             <div className="parent">
                 <AdminDiscount />
                 <AdminProduct />

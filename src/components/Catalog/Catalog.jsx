@@ -20,27 +20,36 @@ function Catalog() {
     selectedCategories.includes(prod.category)
   );
 
-
   return (
-    <div className="catalog">
-      <img src="/images/Shop.webp" alt="Shop banner" />
-      
-      <div className="filters">
-      {mock_categories.map(({category, image}) => (
-        <div
-          key={category}
-          className={`filter-image ${selectedCategories.includes(category) ? "active" : ""}`}
-          onClick={() => toggleCategory(category)}
-        >
-          <img src={image} alt={category} />
-          <span className="category-name">{category}</span>
+    <div className="catalog main-container">
+      <div className="gray-container">
+        <div className="header-row">
+          <div className="shop-image inner-container">
+            <img src="/images/Shop.webp" alt="Shop banner" />
+          </div>
+          <div className="filters inner-container">
+            {mock_categories.map(({category, image}) => (
+              <div
+                key={category}
+                className={`filter-image ${selectedCategories.includes(category) ? "active" : ""}`}
+                onClick={() => toggleCategory(category)}
+              >
+                <img src={image} alt={category} />
+                {/* <span className="category-name">{category}</span> */}
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-      
-      <div className="product-content">
-        {filteredProducts.map(prod => <Product key={prod.id} data={prod} />)}
       </div>
+      { filteredProducts.length > 0 ? 
+      <div className="product-content gray-container">
+          {filteredProducts.map(prod => <Product key={prod.title} data={prod} />)}
+       
+      </div>
+      : <div className="catalog product-content gray-container">
+      <h3>There are no products yet, select a booster pack to start shopping!</h3>
+   
+  </div>}
     </div>
   );
 }

@@ -1,12 +1,55 @@
-.admin h1{
-    
-}
-
 .admin img{
     width: 350px;
+    height: auto;
 }
 
 .admin .parent{
     display: flex;
     justify-content: space-evenly;
+}
+
+.admin .inner-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-control {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.admin .list-container:hover{
+    cursor:pointer
+}
+.admin .list-container img{
+    width: 60px;
+     height: auto;
+}
+.admin .list-card{
+    list-style: none;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0px;
+    padding: 0px 10px 0px;
+}
+.admin .list-container{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.admin .title-card{
+	width: fit-content;
+	align-items: center;
+	display: inline-flex;
+	flex-direction: column;
+	padding: 0.5rem 1rem;
 }

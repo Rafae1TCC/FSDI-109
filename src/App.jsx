@@ -46,8 +46,6 @@ function App() {
             </Routes>
           </main>
 
-          <Footer />
-
         </BackgroundWithContent>
 
       </BrowserRouter>

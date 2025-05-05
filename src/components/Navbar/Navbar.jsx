@@ -8,28 +8,46 @@ function Navbar() {
   let user = useContext(DataContext).user;
   let cart = useContext(DataContext).cart;
 
+  function getNumOfProducts(){
+    let total = 0;
+    for(let i=0; i<cart.length; i++){
+      total += cart[i].quantity;
+    }
+    return total;
+  }
+
   return (
     <>
-      <nav>
-        <span className="title">Balatro Shop</span>
+      <nav className="sidebar-container">
+        <h1 className="title">Balatro Shop</h1>
         <div className="menu">
-          <Link className="navbtn" to="./home">
-            Home
+          <Link className="cart-btn yellow-btn" to="/home">
+            Home 
           </Link>
-          <Link className="navbtn" to="./catalog">
+          <Link className="red-btn cart-btn" to="/catalog">
             Catalog
           </Link>
-          <Link className="navbtn" to="./about">
+          <Link className="red-btn cart-btn" to="/about">
             About
           </Link>
-          <Link className="navbtn" to="./admin">
+          <Link className="yellow-btn cart-btn" to="/admin">
             Admin
           </Link>
         </div>
-        <label className="navbtn">{user.userName}</label>
-          <Link className="navbtn" to="./cart">
-          {cart.length} Cart
+        <div className="menu">
+          <div>
+            <div className="gray-container cart-btn total">
+              <p>Total</p>
+              <p className="y-txt inner-container">${getNumOfProducts()}</p>
+            </div>
+          </div>
+          <Link className="no-deco" to="/cart">
+          <div className="gray-container cart-btn total">
+            <p>Items</p>
+            <p className="y-txt inner-container">{getNumOfProducts()}</p>
+          </div>
           </Link>
+        </div>
       </nav>
     </>
   );

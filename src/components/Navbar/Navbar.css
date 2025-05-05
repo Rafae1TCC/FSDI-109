@@ -1,34 +1,60 @@
-nav{
+.sidebar-container{
+  
+  margin: 0px 30px 0px 30px;
+
+  position: fixed;
+	background: var(--pixel-bg);
   display: flex;
-  align-items: center;
-  padding-left: 12px;
-  background-color: #888686;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 314px;
+  height: 100vh;
+  z-index: 10;
+  
+	box-shadow:
+  calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
+  calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2);
 }
 
-nav .menu{
-  flex: 1;
+.menu{
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-nav .navbtn {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.87);
-  letter-spacing: 1px;
+.cart-btn{
+  color: white;
+  scale: 0.7;
+  width: 120px;
+  font-size: 35px;
+  padding: 0px 5px 0px;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 5px;
-  width: 90px;
-  padding: 12px 0;
+  height: fit-content;
+  overflow-y: hidden;
 }
 
-nav .navbtn:hover {
-  color: rgba(255, 255, 255, 0.87);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+.total{
+  overflow-y: visible;
 }
 
-nav .title{
-  font-size: 20px;
-  font-weight: bold;
-  padding-right: 12px;
+.cart-btn p{
+  margin-top: 0px;
+  line-height: 10px;
+}
+
+.y-txt{
+  padding: 10px 0px;
+  color: var(--yellow);
+  font-size: 45px;
+}
+
+.no-deco{
+  height: fit-content;
+  color: white;
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.y-txt .inner-container{
 }

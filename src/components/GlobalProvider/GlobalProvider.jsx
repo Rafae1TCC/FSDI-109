@@ -11,8 +11,13 @@ function GlobalProvider(props){
         setCart(copy);
     }
     
-    function removeProduct () {}
-    function clearCart () {}
+    function removeProduct () {
+
+    }
+    
+    function clearCart () {
+        setCart([]);
+    }
     
     return (
         <DataContext.Provider value={{
