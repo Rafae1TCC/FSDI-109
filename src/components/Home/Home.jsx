@@ -7,7 +7,7 @@ function Home(){
         <div className="home">
             <div>
             <h1>Balatro Shop Home Page</h1>
-            <img src="/images/Site-logo.webp" alt="" />
+            <img src="/images/Site-logo.png" alt="" />
             </div>
             <Link className="green-btn" to="../catalog">
             Catalog

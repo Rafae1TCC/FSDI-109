@@ -20,12 +20,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 0px;
 }
 
 .cart-btn{
   color: white;
   scale: 0.7;
-  width: 120px;
+  width: 140px;
   font-size: 35px;
   padding: 0px 5px 0px;
   text-decoration: none;
@@ -54,7 +55,4 @@
   text-decoration: none;
   margin: 0px;
   padding: 0px;
-}
-
-.y-txt .inner-container{
 }

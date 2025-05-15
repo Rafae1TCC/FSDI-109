@@ -3,6 +3,8 @@
 }
 
 .home .green-btn{
+    top: 10px;
+    margin: 10px;
     padding: 1px 10px 1px;
     text-decoration: none;
     color: white;

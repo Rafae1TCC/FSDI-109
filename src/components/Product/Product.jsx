@@ -30,38 +30,38 @@ function Product(props) {
 
   return (
     <>
-        <div 
-          onMouseOver={handleMouseOver} 
-          onMouseOut={handleMouseOut} 
-          className="card"
-          >
+      <div 
+        className="card-wrapper" 
+        onMouseEnter={handleMouseOver} 
+        onMouseLeave={handleMouseOut}
+      >
+        <div className="card">
+          <img src={props.data.image} alt="" />
+        </div>
 
-          {isHovered && 
-          <div className="">
-            <QuantityPicker onChange={handleQuantityChange} />
-          </div>
-          }
-
-          <div className="overlay">
-            {isHovered && 
-              <div className="description inner-container">
+        {isHovered && (
+          <>
+            <div className="desc-container overlay quantity-picker">
+              <QuantityPicker onChange={handleQuantityChange} />
+            </div>
+            <div className="desc-container overlay description-box">
+              <div className="desc-left">
                 <h2>{props.data.title}</h2>
-                <p>{props.data.description}</p>
                 <label>{props.data.category}</label>
               </div>
-            }
-            <img src={props.data.image} alt="" />
-            {isHovered && 
-              <div className="description controls">
-                <label className="price">Price: ${props.data.price.toFixed(2)}</label>
-                <button className="product green-btn" onClick={add}>
-                  Add
-                </button>
+              <div className="white-container desc-right">
+                <p>{props.data.description}</p>
               </div>
-            }
+            </div>
+          <div className="desc-container overlay controls-box">
+            <div className="desc-right">
+              <label className="price">Price: ${props.data.price.toFixed(2)}</label>
+              <button className="product green-btn" onClick={add}>Add</button>
+            </div>
           </div>
-          
-        </div>
+        </>
+        )}
+      </div>
     </>
   );
 }

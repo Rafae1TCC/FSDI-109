@@ -10,6 +10,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Admin from './components/Admin/Admin';
 import GlobalProvider from './components/GlobalProvider/GlobalProvider';
 import Cart from './pages/Cart/Cart';
+import Info from './pages/Cart/Info';
 
 function App() {
   const balatroConfig = {
@@ -45,7 +46,6 @@ function App() {
               <Route path="/cart" element={<Cart />}/>
             </Routes>
           </main>
-
         </BackgroundWithContent>
 
       </BrowserRouter>

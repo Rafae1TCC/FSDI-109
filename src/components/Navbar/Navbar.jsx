@@ -15,11 +15,20 @@ function Navbar() {
     }
     return total;
   }
+  function getTotalOfProducts(){
+        let total = 0;
+        
+        for(let i=0; i<cart.length; i++){
+          total += cart[i].quantity * cart[i].price;
+        }
+  
+        return total;
+    }
 
   return (
     <>
       <nav className="sidebar-container">
-        <h1 className="title">Balatro Shop</h1>
+        <img className="logo" src="images/Site-logo.png" alt="" />
         <div className="menu">
           <Link className="cart-btn yellow-btn" to="/home">
             Home 
@@ -34,11 +43,17 @@ function Navbar() {
             Admin
           </Link>
         </div>
+        <div className="">
+        <div className="menu">
+          <Link className="green-btn cart-btn" to="/cart">
+            Cart
+          </Link>
+        </div>
         <div className="menu">
           <div>
             <div className="gray-container cart-btn total">
               <p>Total</p>
-              <p className="y-txt inner-container">${getNumOfProducts()}</p>
+              <p className="y-txt inner-container">${getTotalOfProducts()}</p>
             </div>
           </div>
           <Link className="no-deco" to="/cart">
@@ -47,6 +62,7 @@ function Navbar() {
             <p className="y-txt inner-container">{getNumOfProducts()}</p>
           </div>
           </Link>
+        </div>
         </div>
       </nav>
     </>

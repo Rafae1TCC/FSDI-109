@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./AdminProduct.css"
+import DataService from "../../services/DataService";
 
 function AdminProduct() {
 const [allProducts, setAllProducts] = useState([])
 const [product, setProduct] = useState({
         "title": "",
         "category": "",
-        "quality": "",
-        "image": "",
         "price": "",
+        "description": "",
+        "image": "",
     })
+
+    async function loadProducts() {
+        let allProds = await DataService.getCatalog();
+        setAllProducts(allProds);
+      }
+    
+      useEffect(function() {
+        loadProducts();
+      }, []);
 
     function handleInput(e){
  
@@ -26,8 +36,8 @@ const [product, setProduct] = useState({
                 temp.category = text;
             break
 
-            case "quality":
-                temp.quality = text;
+            case "description":
+                temp.description = text;
             break
 
             case "image":
@@ -35,13 +45,17 @@ const [product, setProduct] = useState({
             break
 
             case "price":
-                temp.price = text;
+                temp.price = parseFloat(text);
             break
         }
         setProduct(temp)
     }
 
-    function save(){
+    async function save(){
+        console.log(product)
+        let response = await DataService.saveProduct(product);
+        console.log(response)
+
         let copy = [...allProducts];
         copy.push(product);
         setAllProducts(copy);
@@ -60,8 +74,8 @@ const [product, setProduct] = useState({
                     <input onBlur={handleInput} name="category" type="text" className="form-control" />  
                 </div>
                 <div className="form-container">
-                    <label className="form-label">Joker Quality: </label>
-                    <input onBlur={handleInput} name="quality" type="text" className="form-control" />  
+                    <label className="form-label">Description: </label>
+                    <input onBlur={handleInput} name="description" type="text" className="form-control" />  
                 </div>
                 <div className="form-container">
                     <label className="form-label">Image: </label>
@@ -69,7 +83,7 @@ const [product, setProduct] = useState({
                 </div>
                 <div className="form-container">
                     <label className="form-label">Price: </label>
-                    <input onBlur={handleInput} name="price" type="text" className="form-control" />  
+                    <input onBlur={handleInput} name="price" type="number" className="form-control" />  
                 </div>
                 <div className="form-container">
                         <button onClick={save} className="green-btn">Save Product</button>

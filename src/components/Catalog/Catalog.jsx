@@ -1,10 +1,23 @@
 import "./Catalog.css";
 import Product from "../Product/Product";
-import { mock_catalog, mock_categories } from "../../services/DataService";
-import { useState } from "react";
+import DataService, { mock_catalog, mock_categories } from "../../services/DataService";
+import { useEffect, useState } from "react";
 
 function Catalog() {
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+  const [allFilters, setAllFilters] = useState([]);
+
+  async function loadProducts() {
+    let allProds = await DataService.getCatalog();
+    setAllProducts(allProds);
+    let allFilts = await DataService.getCategories();
+    setAllFilters(allFilts);
+  }
+
+  useEffect(function() {
+    loadProducts();
+  }, []);
 
   const toggleCategory = (category) => {
     setSelectedCategories(prev => {
@@ -16,7 +29,7 @@ function Catalog() {
     });
   };
 
-  const filteredProducts = mock_catalog.filter(prod => 
+  const filteredProducts = allProducts.filter(prod => 
     selectedCategories.includes(prod.category)
   );
 
@@ -28,7 +41,7 @@ function Catalog() {
             <img src="/images/Shop.webp" alt="Shop banner" />
           </div>
           <div className="filters inner-container">
-            {mock_categories.map(({category, image}) => (
+            {allFilters.map(({category, image}) => (
               <div
                 key={category}
                 className={`filter-image ${selectedCategories.includes(category) ? "active" : ""}`}
